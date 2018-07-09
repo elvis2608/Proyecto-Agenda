@@ -1,7 +1,7 @@
 package com.agenda.spring.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -61,7 +61,7 @@ public class Empleados implements Serializable {
     
     @OneToMany(mappedBy = "idEmpleado")
     
-    private Collection<Personas> personasCollection;
+    private List<Personas> personasList;
     
     public Empleados() {
     }
@@ -123,12 +123,12 @@ public class Empleados implements Serializable {
         this.idDepartamento = idDepartamento;
     }
 
-    public Collection<Personas> getPersonasCollection() {
-        return personasCollection;
+    public List<Personas> getPersonasList() {
+        return personasList;
     }
 
-    public void setPersonasCollection(Collection<Personas> personasCollection) {
-        this.personasCollection = personasCollection;
+    public void setPersonasList(List<Personas> personasList) {
+        this.personasList = personasList;
     }
 
     @Override
