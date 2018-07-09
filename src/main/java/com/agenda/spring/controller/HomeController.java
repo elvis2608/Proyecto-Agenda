@@ -15,7 +15,7 @@ import com.agenda.spring.services.IAgendaServices;
 
 
 
-
+@Controller
 public class HomeController {
 
 	@Autowired
