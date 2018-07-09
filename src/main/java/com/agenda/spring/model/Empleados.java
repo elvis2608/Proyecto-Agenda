@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 
 /**
 *
-* @author Elvis-Gamero and Ruben
+* @author Elvis-Gamero and Ruben fndnfndffnfnfdfffffdf
 */
 @Entity
 @Table(name = "empleados", catalog = "agenda")
