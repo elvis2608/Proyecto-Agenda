@@ -24,31 +24,36 @@ public class AgendaServicesImp implements IAgendaServices {
 	}
 
 	@Override
-	public void listarEmpleados() {
+	public List<Personas> listarEmpleados() {
+		return iagendaDAO.listarEmpleados();
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void listarCategoria() {
+	public List<Categorias> listarCategoria() {
+		return iagendaDAO.listarCategoria();
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void listarDetalles(Personas idPersona) {
+	public Personas listarDetalles(Personas idPersona) {
+		return iagendaDAO.listarDetalles(idPersona);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void listarEmpleadosCat(Categorias idcategoria) {
+	public List<Personas> listarEmpleadosCat(Categorias idcategoria) {
+		return iagendaDAO.listarEmpleadosCat(idcategoria);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void listarEmpleadosDep(Departamentos iddepartamento) {
+	public List<Personas> listarEmpleadosDep(Departamentos iddepartamento) {
+		return iagendaDAO.listarEmpleadosDep(iddepartamento);
 		// TODO Auto-generated method stub
 		
 	}

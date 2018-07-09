@@ -10,15 +10,15 @@ public interface IAgendaDAO {
 
 	public List<Departamentos> listarDepartamentos ();
 	
-	public void listarEmpleados ();
+	public List<Personas> listarEmpleados ();
 	
-	public void listarCategoria ();
+	public List<Categorias> listarCategoria ();
 	
-	public void listarDetalles (Personas idPersona);
+	public Personas listarDetalles (Personas idPersona);
 	
-	public void listarEmpleadosCat (Categorias idcategoria);
+	public List<Personas> listarEmpleadosCat (Categorias idcategoria);
 	
-	public void listarEmpleadosDep (Departamentos iddepartamento);
+	public List<Personas> listarEmpleadosDep (Departamentos iddepartamento);
 	
 	
 }
