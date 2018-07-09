@@ -67,8 +67,8 @@ public class Personas implements Serializable {
 	@OneToMany(mappedBy = "idPersona")
     private List<Telefonos> telefonosList;
     
-	@JoinColumn(name = "idEmpleado", referencedColumnName = "idempleados")
-    @ManyToOne
+	
+    @OneToOne (mappedBy = "idEmpleado")
     private Empleados idEmpleado;
 
 	public Personas() {

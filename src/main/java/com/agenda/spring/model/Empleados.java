@@ -59,9 +59,11 @@ public class Empleados implements Serializable {
     @ManyToOne
     private Departamentos idDepartamento;
     
-    @OneToMany(mappedBy = "idEmpleado")
     
-    private List<Personas> personasList;
+    @JoinColumn(name = "idEmpleado", referencedColumnName = "idempleados")
+    @OneToOne 
+    private Personas persona;
+    
     
     public Empleados() {
     }
@@ -123,15 +125,17 @@ public class Empleados implements Serializable {
         this.idDepartamento = idDepartamento;
     }
 
-    public List<Personas> getPersonasList() {
-        return personasList;
-    }
+    
 
-    public void setPersonasList(List<Personas> personasList) {
-        this.personasList = personasList;
-    }
+    public Personas getPersona() {
+		return persona;
+	}
 
-    @Override
+	public void setPersona(Personas persona) {
+		this.persona = persona;
+	}
+
+	@Override
     public int hashCode() {
         int hash = 0;
         hash += (idempleados != null ? idempleados.hashCode() : 0);
