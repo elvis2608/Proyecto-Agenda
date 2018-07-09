@@ -17,14 +17,16 @@ import com.agenda.spring.services.IAgendaServices;
 
 
 
-@Controller
+@RestController
 public class HomeController {
 
 	
 	@RequestMapping("/Hola")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "greeting";
+        
+        System.out.println("Funciona");
+        return "Hola";
     }
 	
 	

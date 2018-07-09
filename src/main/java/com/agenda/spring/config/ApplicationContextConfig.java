@@ -28,7 +28,7 @@ public class ApplicationContextConfig {
     public InternalResourceViewResolver getViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
+        viewResolver.setSuffix(".html");
         return viewResolver;
     }
     
