@@ -10,7 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -18,6 +19,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "direcciones", catalog = "agenda")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Direcciones.findAll", query = "SELECT d FROM Direcciones d")
+    , @NamedQuery(name = "Direcciones.findByIddirecciones", query = "SELECT d FROM Direcciones d WHERE d.iddirecciones = :iddirecciones")
+    , @NamedQuery(name = "Direcciones.findByDireccion", query = "SELECT d FROM Direcciones d WHERE d.direccion = :direccion")
+    , @NamedQuery(name = "Direcciones.findByCodPostal", query = "SELECT d FROM Direcciones d WHERE d.codPostal = :codPostal")
+    , @NamedQuery(name = "Direcciones.findByLocalidad", query = "SELECT d FROM Direcciones d WHERE d.localidad = :localidad")
+    , @NamedQuery(name = "Direcciones.findByProvincia", query = "SELECT d FROM Direcciones d WHERE d.provincia = :provincia")})
 public class Direcciones implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

@@ -10,7 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.*;
 
 /**
 *
@@ -19,7 +20,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "telefonos", catalog = "agenda")
-
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Telefonos.findAll", query = "SELECT t FROM Telefonos t")
+    , @NamedQuery(name = "Telefonos.findByIdtelefonos", query = "SELECT t FROM Telefonos t WHERE t.idtelefonos = :idtelefonos")
+    , @NamedQuery(name = "Telefonos.findByTelefono", query = "SELECT t FROM Telefonos t WHERE t.telefono = :telefono")})
 public class Telefonos implements Serializable {
 
 	/**

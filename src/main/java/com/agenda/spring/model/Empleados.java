@@ -13,9 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
 *
@@ -23,7 +24,13 @@ import javax.persistence.TemporalType;
 */
 @Entity
 @Table(name = "empleados", catalog = "agenda")
-
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Empleados.findAll", query = "SELECT e FROM Empleados e")
+    , @NamedQuery(name = "Empleados.findByIdempleados", query = "SELECT e FROM Empleados e WHERE e.idempleados = :idempleados")
+    , @NamedQuery(name = "Empleados.findByCodEmpleado", query = "SELECT e FROM Empleados e WHERE e.codEmpleado = :codEmpleado")
+    , @NamedQuery(name = "Empleados.findBySalario", query = "SELECT e FROM Empleados e WHERE e.salario = :salario")
+    , @NamedQuery(name = "Empleados.findByFechaAlta", query = "SELECT e FROM Empleados e WHERE e.fechaAlta = :fechaAlta")})
 public class Empleados implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

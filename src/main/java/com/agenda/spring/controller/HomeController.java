@@ -31,11 +31,8 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("Principal");
 		model.addObject("deplist", listDep);
 		return model;
-		
-		
-		
+			
 	}
-	
 }
 
 
