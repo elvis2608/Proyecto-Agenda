@@ -11,10 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
 @Table(name = "categorias", catalog = "agenda")
 
+@NamedQueries({
+    @NamedQuery(name = "Categorias.findAll", query = "SELECT c FROM Categorias c")
+    , @NamedQuery(name = "Categorias.findByIdcategorias", query = "SELECT c FROM Categorias c WHERE c.idcategorias = :idcategorias")
+    , @NamedQuery(name = "Categorias.findByNombre", query = "SELECT c FROM Categorias c WHERE c.nombre = :nombre")
+    , @NamedQuery(name = "Categorias.findByDescripcion", query = "SELECT c FROM Categorias c WHERE c.descripcion = :descripcion")})
 
 
 public class Categorias implements Serializable {
