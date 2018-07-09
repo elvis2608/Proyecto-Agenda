@@ -66,25 +66,48 @@ public class AgendaDAOImp implements IAgendaDAO{
 	@Override
 	public List<Categorias> listarCategoria() {
 		// TODO Auto-generated method stub
-		return null;
+		 SessionFactory sessions = HibernateUtils.getSessionFactory();
+	        Session session = sessions.openSession();
+	        Query query;
+	        query = session.getNamedQuery("Categorias.findAll");
+	        List<Categorias> addressList = query.list();	       
+		return addressList;
 	}
 
 	@Override
-	public Personas listarDetalles(Personas idPersona) {
+	public List<Personas> listarDetalles(int idPersona) {
 		// TODO Auto-generated method stub
-		return null;
+		 SessionFactory sessions = HibernateUtils.getSessionFactory();
+	        Session session = sessions.openSession();
+	        Query query;
+	        query = session.getNamedQuery("Personas.findByIdpersonas");
+	        query.setInteger("idpersonas", idPersona);
+	        List<Personas> addressList = query.list();	
+		return addressList;
 	}
 
 	@Override
-	public List<Personas> listarEmpleadosCat(Categorias idcategoria) {
-		return null;
+	public List<Personas> listarEmpleadosCat(int idcategoria) {
+		 SessionFactory sessions = HibernateUtils.getSessionFactory();
+	        Session session = sessions.openSession();
+	        Query query;
+	        query = session.getNamedQuery("Categorias.findByIdcategorias");
+	        query.setInteger("idcategorias", idcategoria);
+	        List<Personas> addressList = query.list();	
+		return addressList;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Personas> listarEmpleadosDep(Departamentos iddepartamento) {
-		return null;
+	public List<Personas> listarEmpleadosDep(int iddepartamento) {
+		 SessionFactory sessions = HibernateUtils.getSessionFactory();
+	        Session session = sessions.openSession();
+	        Query query;
+	        query = session.getNamedQuery("Departamentos.findByIddepartamento");
+	        query.setInteger("idcategorias", iddepartamento);
+	        List<Personas> addressList = query.list();	
+		return addressList;
 		// TODO Auto-generated method stub
 		
 	}

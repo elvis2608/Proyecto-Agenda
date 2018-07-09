@@ -14,11 +14,11 @@ public interface IAgendaDAO {
 	
 	public List<Categorias> listarCategoria ();
 	
-	public Personas listarDetalles (Personas idPersona);
+	public List<Personas> listarDetalles (int idPersona);
 	
-	public List<Personas> listarEmpleadosCat (Categorias idcategoria);
+	public List<Personas> listarEmpleadosCat (int idcategoria);
 	
-	public List<Personas> listarEmpleadosDep (Departamentos iddepartamento);
+	public List<Personas> listarEmpleadosDep (int iddepartamento);
 	
 	
 }

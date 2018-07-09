@@ -38,21 +38,21 @@ public class AgendaServicesImp implements IAgendaServices {
 	}
 
 	@Override
-	public Personas listarDetalles(Personas idPersona) {
+	public List<Personas> listarDetalles(int idPersona) {
 		return iagendaDAO.listarDetalles(idPersona);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Personas> listarEmpleadosCat(Categorias idcategoria) {
+	public List<Personas> listarEmpleadosCat(int idcategoria) {
 		return iagendaDAO.listarEmpleadosCat(idcategoria);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Personas> listarEmpleadosDep(Departamentos iddepartamento) {
+	public List<Personas> listarEmpleadosDep(int iddepartamento) {
 		return iagendaDAO.listarEmpleadosDep(iddepartamento);
 		// TODO Auto-generated method stub
 		
